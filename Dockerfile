@@ -20,4 +20,4 @@ RUN crontab /etc/cron.d/borgmatic-cron
 RUN touch /var/log/cron.log
 
 # Run cron and show cron log output
-CMD cron && tail -f /var/log/cron.log
+CMD crond && tail -f /var/log/cron.log
