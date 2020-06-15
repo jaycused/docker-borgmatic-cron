@@ -5,7 +5,7 @@ VOLUME /data
 VOLUME /root/.ssh
 VOLUME /root/.config/borg
 
-RUN apk update && apk add dcron  && rm -rf /var/cache/apk/*
+RUN apk update && apk add --no-cache tzdata dcron  && rm -rf /var/cache/apk/*
 
 #Copy borgmatic-cron to the cron.d dir.
 COPY borgmatic-cron /etc/cron.d/borgmatic-cron
