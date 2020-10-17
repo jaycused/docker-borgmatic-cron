@@ -17,7 +17,8 @@ RUN chmod 0644 /etc/cron.d/borgmatic-cron
 RUN crontab /etc/cron.d/borgmatic-cron
 
 # Create the log file to be able to run tail
-RUN touch /var/log/cron.log
-
+#RUN touch /var/log/cron.log
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 # Run cron and show cron log output
-CMD crond && tail -f /var/log/cron.log
+ENTRYPOINT ["/entrypoint.sh"] 
