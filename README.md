@@ -13,5 +13,5 @@ Adds cron job so it can run daily backups.
 ### Cronjob
 
 ```
-0 0 6 * * ? usr/local/bin/borgmatic -c /root/.config/borg/config.yaml create --stats 2>&1
+0 6 * * * usr/local/bin/borgmatic -c /root/.config/borg/config.yaml create --stats 2>&1
 ```
